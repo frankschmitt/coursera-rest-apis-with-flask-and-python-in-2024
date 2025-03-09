@@ -1,0 +1,6 @@
+= Synopsis
+Exercises for the Coursera course "REST APIs with Flask and Python in 2024" 
+
+= License 
+Apache (see LICENSE)
+
