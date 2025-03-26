@@ -16,9 +16,8 @@ def average_grade(data):
 # You must add all grades of all students together
 # You must also count how many grades there are in total in the entire list
 def average_grade_all_students(student_list):
-    all_grades = []
-    for s in student_list:
-        all_grades += s['grades']
+    # nested list comprehension, see https://stackoverflow.com/a/952952/610979
+    all_grades = [ g for student in student_list for g in student['grades'] ]
     return sum(all_grades) / len(all_grades)
 
 
