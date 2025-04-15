@@ -7,12 +7,21 @@
 # stock_price should add up each item price inside self.items to come up with a total and return that
 
 class Store:
-    def __init__(self):
-        pass
+    def __init__(self, name):
+        self.name = name
+        self.items = []
 
     def add_item(self, name, price):
-        pass
+        self.items.append({'name': name, 'price': price})
 
     def stock_price(self):
-        pass
+        return sum([x['price'] for x in self.items])
 
+
+
+if __name__ == "__main__":
+    s = Store("Tom's Hardware Store")
+    s.add_item('Hammer', 10.5)
+    s.add_item('Nails', 2.3)
+    s.add_item('Wooden plank', 5.0)
+    print(f"Tom's Hardware store total: {s.stock_price()}")
