@@ -21,3 +21,9 @@ class Store:
     @classmethod
     def store_details(store):
         pass
+if __name__ == "__main__":
+    s = Store("Tom's Hardware Store")
+    s.add_item('Hammer', 10.5)
+    s.add_item('Nails', 2.3)
+    s.add_item('Wooden plank', 5.0)
+    print(f"Tom's Hardware store total: {s.stock_price()}")
