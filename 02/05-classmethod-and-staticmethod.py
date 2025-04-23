@@ -19,7 +19,7 @@ class Store:
 
     @classmethod
     def franchise(cls, store):
-        return Store(store.name + " - franchise")
+        return cls(store.name + " - franchise")
 
     @classmethod
     def store_details(cls, store):
