@@ -14,16 +14,25 @@ class Store:
     def stock_price(self):
         return sum([item['price'] for item in self.items])
 
-    @classmethod
-    def franchise(cls, store):
-        pass
+    def __repr__(self):
+        return f"{self.name}, total stock price: {sum([i['price'] for i in self.items]) }"
 
     @classmethod
-    def store_details(store):
-        pass
+    def franchise(cls, store):
+        return Store(store.name + " - franchise")
+
+    @classmethod
+    def store_details(cls, store):
+        return str(store)
+
+
+
 if __name__ == "__main__":
     s = Store("Tom's Hardware Store")
     s.add_item('Hammer', 10.5)
     s.add_item('Nails', 2.3)
     s.add_item('Wooden plank', 5.0)
     print(f"Tom's Hardware store total: {s.stock_price()}")
+    print(f"details: {Store.store_details(s)}")
+    s2 = Store.franchise(s)
+    print(f"franchise store: {s2}")
