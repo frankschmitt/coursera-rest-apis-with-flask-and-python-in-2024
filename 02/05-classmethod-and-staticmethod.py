@@ -15,7 +15,7 @@ class Store:
         return sum([item['price'] for item in self.items])
 
     def __repr__(self):
-        return f"{self.name}, total stock price: {sum([i['price'] for i in self.items]) }"
+        return f"{self.name}, total stock price: {self.stock_price()}"
 
     @classmethod
     def franchise(cls, store):
